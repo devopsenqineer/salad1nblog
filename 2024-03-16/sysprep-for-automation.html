@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>sysprep for automation | salad1n</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="sysprep for automation" />
+<meta name="author" content="salad1n" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="automation using sysprep" />
+<meta property="og:description" content="automation using sysprep" />
+<link rel="canonical" href="https://salad1n.dev/2024-03-16/sysprep-for-automation" />
+<meta property="og:url" content="https://salad1n.dev/2024-03-16/sysprep-for-automation" />
+<meta property="og:site_name" content="salad1n" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="sysprep for automation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"salad1n","url":"https://salad1n.dev"},"dateModified":"2024-03-16T00:00:00+00:00","datePublished":"2024-03-16T00:00:00+00:00","description":"automation using sysprep","headline":"sysprep for automation","mainEntityOfPage":{"@type":"WebPage","@id":"https://salad1n.dev/2024-03-16/sysprep-for-automation"},"url":"https://salad1n.dev/2024-03-16/sysprep-for-automation"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="/assets/timeline.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="https://salad1n.dev/feed.xml" title="salad1n" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/" style="color:#111; text-decoration:none;">
+      <h2 class="nav-title">salad1n</h2>
+    </a>
+    <ul>
+      <li><a href="/" style="color:#111;">Posts</a></li>
+      <li><a href="/tags" style="color:#111;">Tags</a></li>
+      <li><a href="/about" style="color:#111;">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by salad1n</span>
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2024-03-16 00:00:00 +0000">March 16, 2024</time>
+    
+  </div>
+
+  <h1 class="post-title">sysprep for automation</h1>
+  <div class="post-line"></div>
+
+  <h1 id="how-to-use-sysprep-for-automation">How to use sysprep for automation?</h1>
+
+<h3 id="what-is-sysprep-actually">What is sysprep actually?</h3>
+
+<p>Sysprep stands for system preparation. It is a tool that is integrated within Windows operating systems. It prepares a Windows client or a Windows server to remove specific information from the Windows operating system, e.g. the existing SID is deleted. By running sysprep, the image can be used to be installed on multiple instances.</p>
+
+<h3 id="which-functions-are-good-about-sysprep">Which functions are good about sysprep?</h3>
+
+<p>The following functions are very helpful:</p>
+
+<ul>
+  <li>
+    <p><strong>Removes specific information</strong>: It removes specific information and especially the SID.</p>
+  </li>
+  <li>
+    <p><strong>Uninstalls drivers</strong>: Uninstalls drivers, but does not remove them</p>
+  </li>
+  <li>
+    <p><strong>Add an answer file (unattend)</strong>: Allows you to add an answer file to the existing operating system.</p>
+  </li>
+</ul>
+
+<h3 id="and-how-can-i-use-sysprep-for-automation-now">And how can I use sysprep for automation now?</h3>
+
+<p>First, I’ll give some context as to why you can and should use sysprep.
+<strong>Following scenario:</strong>
+Based on my Terraform project (https://github.com/devopsenqineer/terraform) which creates virtual machines in a Hyper-V environment, assigns the hostname and IP addresses through scripts, there was the following problem: The domain join was not possible because the machines used <strong>all</strong> had the same SID. As a result, I received an error message that this was not possible due to the multiple SID.</p>
+
+<p><strong><em>Possible solution</em></strong>:</p>
+
+<p>Through research, I came across the integrated tool sysprep. Through a conversation with a colleague at work, the possibility of sysprep was explained to me in more detail, as I was not familiar with it at the time.</p>
+
+<p>I continued to read and familiarize myself with sysprep and needed several test runs to get the desired result. In addition, it was previously difficult to activate WinRM (Windows Remote Management).</p>
+
+<p>I had to use a Powershell script to activate WinRM which can be found under the link (https://gist.github.com/tdigangi5/85b0b3bb5f7b35c7b829828928f22cdd). Since I had to run this script every time on a new machine to activate WinRM, it was worth considering putting it in an answer file.</p>
+
+<p>Through intensive research I found parts for the answer file and will share them with you. This answer file can still be revised and further perfected.</p>
+
+<p>## 
+<strong>Explanation for the answer file:</strong></p>
+
+<p>I will briefly explain how to use the answer file and sysprep:</p>
+
+<ul>
+  <li>
+    <p><strong>1st step</strong>: Change the user and password within the answer file, and adjust the path for the PowerShell script for WinRM.</p>
+  </li>
+  <li>
+    <p><strong>2nd step:</strong> Then save the answer file in the sysprep folder. I have named the answer file deploy.xml.</p>
+
+    <p>The path is as follows: <strong>“C:\Windows\System32\Sysprep”</strong>.</p>
+  </li>
+  <li>
+    <p>Step 3:** The last step is to open a cmd window and enter the following command:</p>
+
+    <pre><code class="language-cmd">  C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend: "C:\Windows\System32\Sysprep\deploy.xml" 
+</code></pre>
+  </li>
+  <li>
+    <p><strong>4th step:</strong> As the last step and actually one of the <strong>most important</strong> steps: Do <strong>NOT</strong> boot the virtual machine. The virtual machine should now be exported and only started up after successful export and, if necessary, copying of the virtual machine.</p>
+  </li>
+</ul>
+
+<h2 id="code-of-the-answer-file">Code of the answer file</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;unattend</span> <span class="na">xmlns=</span><span class="s">"urn:schemas-microsoft-com:unattend"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;settings</span> <span class="na">pass=</span><span class="s">"oobeSystem"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;component</span> <span class="na">xmlns:wcm=</span><span class="s">"http://schemas.microsoft.com/WMIConfig/2002/State"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">name=</span><span class="s">"Microsoft-Windows-Shell-Setup"</span> <span class="na">processorArchitecture=</span><span class="s">"amd64"</span> <span class="na">publicKeyToken=</span><span class="s">"31bf3856ad364e35"</span> <span class="na">language=</span><span class="s">"neutral"</span> <span class="na">versionScope=</span><span class="s">"nonSxS"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;UserAccounts&gt;</span>
+            <span class="nt">&lt;AdministratorPassword&gt;</span>
+               <span class="nt">&lt;Value&gt;</span>Password12345<span class="nt">&lt;/Value&gt;</span>
+               <span class="nt">&lt;PlainText&gt;</span>true<span class="nt">&lt;/PlainText&gt;</span>
+            <span class="nt">&lt;/AdministratorPassword&gt;</span>
+         <span class="nt">&lt;/UserAccounts&gt;</span>
+         <span class="nt">&lt;AutoLogon&gt;</span>
+            <span class="nt">&lt;Username&gt;</span>Administrator<span class="nt">&lt;/Username&gt;</span>
+            <span class="nt">&lt;Enabled&gt;</span>true<span class="nt">&lt;/Enabled&gt;</span>
+            <span class="nt">&lt;LogonCount&gt;</span>1<span class="nt">&lt;/LogonCount&gt;</span>
+            <span class="nt">&lt;Password&gt;</span>
+               <span class="nt">&lt;Value&gt;</span>Password12345<span class="nt">&lt;/Value&gt;</span>
+               <span class="nt">&lt;PlainText&gt;</span>true<span class="nt">&lt;/PlainText&gt;</span>
+            <span class="nt">&lt;/Password&gt;</span>
+         <span class="nt">&lt;/AutoLogon&gt;</span>
+         <span class="nt">&lt;FirstLogonCommands&gt;</span>
+            <span class="nt">&lt;SynchronousCommand</span> <span class="na">wcm:action=</span><span class="s">"add"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;Order&gt;</span>1<span class="nt">&lt;/Order&gt;</span>
+               <span class="nt">&lt;CommandLine&gt;</span>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /t REG_DWORD /d 0 /f<span class="nt">&lt;/CommandLine&gt;</span>
+            <span class="nt">&lt;/SynchronousCommand&gt;</span>
+            <span class="nt">&lt;SynchronousCommand</span> <span class="na">wcm:action=</span><span class="s">"add"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;Order&gt;</span>2<span class="nt">&lt;/Order&gt;</span>
+               <span class="nt">&lt;CommandLine&gt;</span>powershell.exe -File "C:\{PathToYourScriptOnTheHost}\winrm.ps1"<span class="nt">&lt;/CommandLine&gt;</span>
+            <span class="nt">&lt;/SynchronousCommand&gt;</span>
+         <span class="nt">&lt;/FirstLogonCommands&gt;</span>
+         <span class="nt">&lt;OOBE&gt;</span>
+            <span class="nt">&lt;HideEULAPage&gt;</span>true<span class="nt">&lt;/HideEULAPage&gt;</span>
+            <span class="nt">&lt;HideLocalAccountScreen&gt;</span>true<span class="nt">&lt;/HideLocalAccountScreen&gt;</span>
+            <span class="nt">&lt;HideOEMRegistrationScreen&gt;</span>true<span class="nt">&lt;/HideOEMRegistrationScreen&gt;</span>
+            <span class="nt">&lt;HideOnlineAccountScreens&gt;</span>true<span class="nt">&lt;/HideOnlineAccountScreens&gt;</span>
+            <span class="nt">&lt;HideWirelessSetupInOOBE&gt;</span>true<span class="nt">&lt;/HideWirelessSetupInOOBE&gt;</span>
+            <span class="nt">&lt;NetworkLocation&gt;</span>Other<span class="nt">&lt;/NetworkLocation&gt;</span>
+            <span class="nt">&lt;ProtectYourPC&gt;</span>3<span class="nt">&lt;/ProtectYourPC&gt;</span>
+            <span class="nt">&lt;SkipMachineOOBE&gt;</span>true<span class="nt">&lt;/SkipMachineOOBE&gt;</span>
+            <span class="nt">&lt;SkipUserOOBE&gt;</span>true<span class="nt">&lt;/SkipUserOOBE&gt;</span>
+            <span class="nt">&lt;UnattendEnableRetailDemo&gt;</span>false<span class="nt">&lt;/UnattendEnableRetailDemo&gt;</span>
+         <span class="nt">&lt;/OOBE&gt;</span>
+      <span class="nt">&lt;/component&gt;</span>
+   <span class="nt">&lt;/settings&gt;</span>
+<span class="nt">&lt;/unattend&gt;</span>
+</code></pre></div></div>
+
+<p>Thanks for reading my blog.</p>
+
+</div>
+
+
+
+<div class="pagination">
+  
+    <a href="/2025-03-15/homelab-series" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/2024-03-10/ansible-introduction" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+</footer>
+
+  </body>
+</html>

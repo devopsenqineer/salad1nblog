@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Homelab Hardware: Building the Foundation for a Scalable Lab | salad1n</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Homelab Hardware: Building the Foundation for a Scalable Lab" />
+<meta name="author" content="salad1n" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="A comprehensive guide to building a modern homelab" />
+<meta property="og:description" content="A comprehensive guide to building a modern homelab" />
+<link rel="canonical" href="https://salad1n.dev/2025-03-15/homelab-series" />
+<meta property="og:url" content="https://salad1n.dev/2025-03-15/homelab-series" />
+<meta property="og:site_name" content="salad1n" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Homelab Hardware: Building the Foundation for a Scalable Lab" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"salad1n","url":"https://salad1n.dev"},"dateModified":"2025-03-15T00:00:00+00:00","datePublished":"2025-03-15T00:00:00+00:00","description":"A comprehensive guide to building a modern homelab","headline":"Homelab Hardware: Building the Foundation for a Scalable Lab","mainEntityOfPage":{"@type":"WebPage","@id":"https://salad1n.dev/2025-03-15/homelab-series"},"url":"https://salad1n.dev/2025-03-15/homelab-series"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="/assets/timeline.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="https://salad1n.dev/feed.xml" title="salad1n" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/" style="color:#111; text-decoration:none;">
+      <h2 class="nav-title">salad1n</h2>
+    </a>
+    <ul>
+      <li><a href="/" style="color:#111;">Posts</a></li>
+      <li><a href="/tags" style="color:#111;">Tags</a></li>
+      <li><a href="/about" style="color:#111;">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by salad1n</span>
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2025-03-15 00:00:00 +0000">March 15, 2025</time>
+    
+  </div>
+
+  <h1 class="post-title">Homelab Hardware: Building the Foundation for a Scalable Lab</h1>
+  <div class="post-line"></div>
+
+  <h1 id="homelab-hardware-building-the-foundation-for-a-scalable-lab">Homelab Hardware: Building the Foundation for a Scalable Lab</h1>
+
+<p>In the world of technology enthusiasts, system administrators, and DevOps professionals, a homelab represents more than just a collection of computing equipment—it’s a personal playground for learning, experimentation, and skill development. As someone who has spent years refining my homelab setup, I’ve learned that the foundation of any successful lab environment begins with thoughtful hardware selection. In this comprehensive guide, I’ll walk you through my hardware choices, the reasoning behind them, and how these decisions have enabled a flexible, powerful, yet sustainable homelab ecosystem.</p>
+
+<h2 id="why-build-a-homelab-in-2025">Why Build a Homelab in 2025?</h2>
+
+<p>Before diving into hardware specifics, let’s address the fundamental question: why build a homelab when cloud services are so readily available? For many of us, the answer lies in several compelling benefits:</p>
+
+<ul>
+  <li><strong>Hands-on learning</strong>: Nothing beats direct experience with hardware, hypervisors, networking, and storage systems.</li>
+  <li><strong>Cost control</strong>: After initial investment, you’re not paying ongoing cloud subscription fees.</li>
+  <li><strong>Privacy and data ownership</strong>: Your data remains completely under your control.</li>
+  <li><strong>Unlimited experimentation</strong>: Test configurations, break things, and learn without incurring additional costs.</li>
+  <li><strong>Performance</strong>: Local network speeds vastly outperform internet-dependent cloud services for many workloads.</li>
+  <li><strong>Skills development</strong>: The knowledge gained transfers directly to enterprise environments.</li>
+</ul>
+
+<p>With these benefits in mind, let’s explore the core of my homelab setup.</p>
+
+<h2 id="hardware-selection-philosophy">Hardware Selection Philosophy</h2>
+
+<p>When building my homelab, I approached hardware selection with three primary considerations:</p>
+
+<ol>
+  <li><strong>Energy efficiency</strong>: Equipment running 24/7 can significantly impact your electricity bill.</li>
+  <li><strong>Noise level</strong>: Unless you have a dedicated space, noisy server fans quickly become intolerable.</li>
+  <li><strong>Performance/value ratio</strong>: Balancing capability with cost is crucial for a sustainable setup.</li>
+</ol>
+
+<p>These principles led me to move away from traditional rack-mounted servers toward a more home-friendly solution.</p>
+
+<h2 id="the-heart-of-my-homelab-lenovo-thinkcentre-m720q">The Heart of My Homelab: Lenovo ThinkCentre M720q</h2>
+
+<p>After extensive research, I settled on the <strong>Lenovo ThinkCentre M720q</strong> as my primary compute node. This compact mini-PC offers an impressive balance of performance, efficiency, and expandability that makes it ideal for homelab use.</p>
+
+<h3 id="key-specifications">Key Specifications</h3>
+
+<ul>
+  <li><strong>Processor</strong>: Intel Core i5-8400T (6 cores/6 threads, 1.7GHz base, 3.3GHz turbo)</li>
+  <li><strong>Memory</strong>: 16GB DDR4 (upgraded from stock 8GB), expandable to 32GB</li>
+  <li><strong>Storage</strong>: 1TB NVMe SSD for blazing-fast VM and container performance</li>
+  <li><strong>Networking</strong>: Gigabit Ethernet port with Intel chipset (reliable for virtualization)</li>
+  <li><strong>Expansion</strong>: Multiple USB 3.1 ports, DisplayPort, HDMI</li>
+  <li><strong>Form Factor</strong>: 1L mini-PC (approximately 7” × 7” × 1.4”)</li>
+  <li><strong>Power Consumption</strong>: ~10W idle, ~45W under load</li>
+</ul>
+
+<h3 id="why-this-hardware-shines-for-homelab-use">Why This Hardware Shines for Homelab Use</h3>
+
+<h4 id="energy-efficiency">Energy Efficiency</h4>
+
+<p>The ThinkCentre M720q’s energy efficiency deserves special attention. With an average power draw of only 15-20W during typical operation, it consumes roughly 80-90% less power than a traditional 1U server. For perspective, my previous rack server pulled around 180W at idle—translating to approximately €20-25 in monthly electricity costs compared to just €2-3 for the ThinkCentre.</p>
+
+<p>This efficiency stems from several design elements:</p>
+
+<ul>
+  <li><strong>Mobile-derived CPU</strong>: The “T” suffix in i5-8400T indicates a power-optimized variant</li>
+  <li><strong>Modern power management</strong>: Advanced sleep states and dynamic frequency scaling</li>
+  <li><strong>Efficient cooling system</strong>: Properly designed airflow eliminates energy waste</li>
+  <li><strong>SSD storage</strong>: No power-hungry spinning disks</li>
+</ul>
+
+<h4 id="virtualization-capabilities">Virtualization Capabilities</h4>
+
+<p>Despite its compact size, the M720q offers robust virtualization support:</p>
+
+<ul>
+  <li><strong>Intel VT-x and VT-d</strong>: Full hardware virtualization support for efficient VM operation</li>
+  <li><strong>Six physical cores</strong>: Sufficient for running 10-15 lightweight VMs or containers</li>
+  <li><strong>NVMe storage</strong>: Exceptional I/O performance for database workloads and concurrent VM operations</li>
+</ul>
+
+<p>I’ve successfully run the following virtualized environments simultaneously:</p>
+
+<ul>
+  <li>Proxmox VE hypervisor (bare metal installation)</li>
+  <li>Ubuntu Server VM running Docker (8+ containers)</li>
+  <li>Windows 10 VM for testing</li>
+  <li>pfSense VM for network experimentation</li>
+  <li>Kubernetes single-node cluster for container orchestration learning</li>
+</ul>
+
+<h4 id="noise-profile">Noise Profile</h4>
+
+<p>For those setting up a homelab in living spaces, noise consideration is crucial. The M720q operates at approximately 28-30dB under typical loads—roughly equivalent to whispered conversation. This quiet operation stands in stark contrast to the 45-55dB jet-like noise of enterprise rack servers.</p>
+
+<p>The system achieves this quiet performance through:</p>
+
+<ul>
+  <li><strong>Single, variable-speed fan</strong>: Ramps up only when necessary</li>
+  <li><strong>Efficient heat sink design</strong>: Maximizes passive cooling</li>
+  <li><strong>Modern CPU thermal management</strong>: Prevents unnecessary fan activation</li>
+</ul>
+
+<h4 id="expansion-options">Expansion Options</h4>
+
+<p>While compact, the M720q offers surprising expandability:</p>
+
+<ul>
+  <li><strong>RAM upgrades</strong>: Two SODIMM slots supporting up to 32GB (2×16GB)</li>
+  <li><strong>Storage expansion</strong>: M.2 slot plus 2.5” SATA bay</li>
+  <li><strong>USB devices</strong>: Multiple USB 3.1 ports for external storage or other peripherals</li>
+  <li><strong>Network expansion</strong>: Additional USB-to-Ethernet adapters for multi-network setups</li>
+</ul>
+
+<h2 id="storage-strategy-local">Storage Strategy: Local</h2>
+
+<p>My storage approach combines local high-performance storage with networked capacity:</p>
+
+<h3 id="local-storage">Local Storage</h3>
+
+<ul>
+  <li><strong>Primary</strong>: 1TB NVMe SSD in the ThinkCentre</li>
+  <li><strong>Purpose</strong>: Host OS, VMs, and frequently accessed containers</li>
+</ul>
+
+<h2 id="scalability-considerations">Scalability Considerations</h2>
+
+<p>A well-designed homelab should grow with your needs. I’ve planned several expansion paths:</p>
+
+<h3 id="short-term-expansion">Short-term Expansion</h3>
+
+<ul>
+  <li><strong>Memory upgrade</strong>: Increase ThinkCentre RAM to 32GB for additional VMs</li>
+</ul>
+
+<h3 id="medium-term-expansion">Medium-term Expansion</h3>
+
+<ul>
+  <li><strong>Additional compute node</strong>: Second ThinkCentre for clustering capabilities</li>
+</ul>
+
+<h3 id="long-term-vision">Long-term Vision</h3>
+
+<ul>
+  <li><strong>Mini-cluster</strong>: 3-4 compute nodes for true high-availability workloads</li>
+  <li><strong>Dedicated backup appliance</strong>: Separate system for comprehensive 3-2-1 backup strategy</li>
+</ul>
+
+<h2 id="cost-analysis">Cost Analysis</h2>
+
+<p>For transparency, here’s the approximate cost breakdown of my current setup:</p>
+
+<ul>
+  <li>Lenovo ThinkCentre M720q (refurbished): 290€</li>
+</ul>
+
+<p>While this represents a significant initial investment, it’s worth noting that this entire setup consumes less than 60W on average—roughly €8-10 monthly in electricity costs. Compared to equivalent cloud computing resources (which would easily exceed €100/month), the homelab achieves ROI within 12-18 months of operation.</p>
+
+<h2 id="lessons-learned-and-recommendations">Lessons Learned and Recommendations</h2>
+
+<p>After several iterations of my homelab setup, I’ve gathered these key insights:</p>
+
+<ol>
+  <li><strong>Start small, grow intentionally</strong>: Begin with a single versatile system before expanding.</li>
+  <li><strong>Prioritize efficiency</strong>: Low power consumption compounds into significant savings.</li>
+  <li><strong>Buy business-class when possible</strong>: Enterprise and small business equipment offers better reliability and features than consumer gear.</li>
+  <li><strong>Consider the complete ecosystem</strong>: Memory, storage, networking, and power protection are as important as CPU specifications.</li>
+  <li><strong>Plan for failure</strong>: Implement backup strategies from day one.</li>
+</ol>
+
+<h2 id="conclusion-building-your-foundation">Conclusion: Building Your Foundation</h2>
+
+<p>Creating a homelab isn’t merely about accumulating hardware—it’s about building a foundation for learning, experimentation, and personal growth in technology. The ThinkCentre M720q and supporting infrastructure have provided me with an excellent balance of performance, efficiency, and expandability.</p>
+
+<p>Whether you’re exploring virtualization, containerization, networking, or automated infrastructure, starting with the right hardware foundation sets you up for success. By prioritizing efficiency, quiet operation, and thoughtful expansion paths, you can create a homelab that grows with your skills and interests without breaking the bank or disrupting your living environment.</p>
+
+<p>Remember that homelab journeys are highly personal—your specific needs may differ from mine. The key is making intentional choices that align with your learning objectives, space constraints, and budget realities.</p>
+
+<p>In the next article in this series, I’ll dive deeper into my virtualization and containerization strategy, exploring how Proxmox, Docker, and Kubernetes work together to create a flexible and powerful homelab environment.</p>
+
+<p>What hardware powers your homelab? I’d love to hear about your setup in the comments below!</p>
+
+<hr />
+
+<p><em>This blog post is part of my ongoing Homelab Series, where I share detailed insights into my personal lab environment. Stay tuned for upcoming posts on virtualization, networking, security, and DevOps automation.</em></p>
+
+<p>Check also my Post on Medium:</p>
+
+<p>https://medium.com/@devopsenqineer/how-to-build-a-homelab-in-2025-3b551baef38f</p>
+
+</div>
+
+
+
+<div class="pagination">
+  
+    <a href="/2025-04-25/career" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/2024-03-16/sysprep-for-automation" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+</footer>
+
+  </body>
+</html>

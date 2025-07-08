@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://salad1n.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://salad1n.dev/" rel="alternate" type="text/html" /><updated>2025-07-08T20:48:26+00:00</updated><id>https://salad1n.dev/feed.xml</id><title type="html">salad1n</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>salad1n</name></author><entry xml:lang="en"><title type="html">career update</title><link href="https://salad1n.dev/2025-04-25/career" rel="alternate" type="text/html" title="career update" /><published>2025-04-25T00:00:00+00:00</published><updated>2025-04-25T00:00:00+00:00</updated><id>https://salad1n.dev/2025-04-25/career</id><content type="html" xml:base="https://salad1n.dev/2025-04-25/career"><![CDATA[<h4 id="before-my-new-journey">Before my new journey</h4>
+
+<p>Before I took on this new challenge, I spent 2-3 years working with Ansible, PowerShell, Terraform, and Azure during my training, and then worked for another year as a DevOps Engineer at my training company.</p>
+
+<p>My previous company had around 1000 employees, with an IT department that alone had about 200 employees.</p>
+
+<p>During my time there, I was deeply involved in managing infrastructure, automating processes, and working with cloud technologies like Azure. This experience gave me a solid foundation and helped me grow in various aspects of DevOps, which has now been very useful in my current role.</p>
+
+<hr />
+<h4 id="new-professional-challenge-and-learning-journey">New Professional Challenge and Learning Journey</h4>
+
+<p>Since January 1st, I’ve embarked on a new professional challenge and joined a new company. The beginning was anything but easy—I transitioned from a familiar environment with Powershell, Azure, Microsoft Server, Win11, Terraform, and Ansible to a completely new set of technologies and an entirely new operating system. This means that I am now working with macOS, Linux, Kubernetes (K8s), Docker, AWS, OTC Cloud, and the Atlassian Suite.</p>
+
+<p>This change was a real challenge. I had to dive into an entirely new tech stack, which was not easy at first. But over time, I started to get more comfortable with the new technologies. I initially focused on Docker, Bash, and Kubernetes, as these tools are central to the new infrastructure. Gradually, I was able to build on that and dive deeper into the material.</p>
+
+<p>A major milestone in this new work environment was when I took on the role of project lead for a migration project for the Atlassian Suite. Our task was to transition the entire team and workflows to the Atlassian tools like Jira and Confluence. This transition was exciting because it allowed me to delve deep into the processes of software development and project management. The whole process showed me how important it is to choose the right tools to improve team collaboration and communication.</p>
+
+<p>At the same time, I’ve been deeply involved in the existing pipelines running in Bamboo, working on optimizing these pipelines and fixing issues. A major focus has been integrating AWS and Cloudflare into these pipelines. It was an interesting challenge to adapt Bamboo so it would work perfectly with our cloud infrastructure. This is not just about automating build and deployment processes, but also about optimizing and ensuring the smooth flow of these processes to enhance team efficiency.</p>
+
+<p>Another area I’ve worked extensively on is leveraging the OTC Cloud. I’ve created five Terraform modules, including a network module. It has been a great opportunity to dive deeper into cloud infrastructure and ensure that everything is designed and built correctly. Terraform has helped automate the infrastructure while ensuring we follow best practices.</p>
+
+<p>Another area where I’ve become more active is Kubernetes. I’ve set up my own K3s cluster on my Proxmox host using Ansible and integrated ArgoCD to automate continuous delivery (CD). This process has shown me how powerful Kubernetes can be in managing containerized applications, and how important it is to have a well-functioning CI/CD pipeline. The progress I’ve made in this area has motivated me to continue learning and finding new ways to improve automation and scalability.</p>
+
+<p>Currently, we are working on introducing a new CI/CD tool that combines code hosting with self-hosted solutions. It will be exciting to see how this tool will change our workflows further and what new possibilities it will open up for the organization. I am looking forward to how this new tool will be integrated into the existing processes and how it will drive our transformation forward.</p>
+
+<hr />
+
+<p>Since I joined, I’ve already learned a lot and grown in many ways—not just professionally, but personally as well. I’m taking on more and more responsibility and am happy that I’m continuously growing in different areas. Optimizing pipelines, working with new technologies, and taking on projects motivate me every day. I appreciate the challenge and look forward to learning even more in the coming months.</p>
+
+<hr />
+
+<p>I’ll be regularly posting about my homelab and my experiences with these new technologies. Stay tuned, there’s much more to explore!</p>]]></content><author><name>salad1n</name></author><category term="experience" /><summary type="html"><![CDATA[updating tech stack within new job]]></summary></entry><entry xml:lang="en"><title type="html">Homelab Hardware: Building the Foundation for a Scalable Lab</title><link href="https://salad1n.dev/2025-03-15/homelab-series" rel="alternate" type="text/html" title="Homelab Hardware: Building the Foundation for a Scalable Lab" /><published>2025-03-15T00:00:00+00:00</published><updated>2025-03-15T00:00:00+00:00</updated><id>https://salad1n.dev/2025-03-15/homelab-series</id><content type="html" xml:base="https://salad1n.dev/2025-03-15/homelab-series"><![CDATA[<h1 id="homelab-hardware-building-the-foundation-for-a-scalable-lab">Homelab Hardware: Building the Foundation for a Scalable Lab</h1>
+
+<p>In the world of technology enthusiasts, system administrators, and DevOps professionals, a homelab represents more than just a collection of computing equipment—it’s a personal playground for learning, experimentation, and skill development. As someone who has spent years refining my homelab setup, I’ve learned that the foundation of any successful lab environment begins with thoughtful hardware selection. In this comprehensive guide, I’ll walk you through my hardware choices, the reasoning behind them, and how these decisions have enabled a flexible, powerful, yet sustainable homelab ecosystem.</p>
+
+<h2 id="why-build-a-homelab-in-2025">Why Build a Homelab in 2025?</h2>
+
+<p>Before diving into hardware specifics, let’s address the fundamental question: why build a homelab when cloud services are so readily available? For many of us, the answer lies in several compelling benefits:</p>
+
+<ul>
+  <li><strong>Hands-on learning</strong>: Nothing beats direct experience with hardware, hypervisors, networking, and storage systems.</li>
+  <li><strong>Cost control</strong>: After initial investment, you’re not paying ongoing cloud subscription fees.</li>
+  <li><strong>Privacy and data ownership</strong>: Your data remains completely under your control.</li>
+  <li><strong>Unlimited experimentation</strong>: Test configurations, break things, and learn without incurring additional costs.</li>
+  <li><strong>Performance</strong>: Local network speeds vastly outperform internet-dependent cloud services for many workloads.</li>
+  <li><strong>Skills development</strong>: The knowledge gained transfers directly to enterprise environments.</li>
+</ul>
+
+<p>With these benefits in mind, let’s explore the core of my homelab setup.</p>
+
+<h2 id="hardware-selection-philosophy">Hardware Selection Philosophy</h2>
+
+<p>When building my homelab, I approached hardware selection with three primary considerations:</p>
+
+<ol>
+  <li><strong>Energy efficiency</strong>: Equipment running 24/7 can significantly impact your electricity bill.</li>
+  <li><strong>Noise level</strong>: Unless you have a dedicated space, noisy server fans quickly become intolerable.</li>
+  <li><strong>Performance/value ratio</strong>: Balancing capability with cost is crucial for a sustainable setup.</li>
+</ol>
+
+<p>These principles led me to move away from traditional rack-mounted servers toward a more home-friendly solution.</p>
+
+<h2 id="the-heart-of-my-homelab-lenovo-thinkcentre-m720q">The Heart of My Homelab: Lenovo ThinkCentre M720q</h2>
+
+<p>After extensive research, I settled on the <strong>Lenovo ThinkCentre M720q</strong> as my primary compute node. This compact mini-PC offers an impressive balance of performance, efficiency, and expandability that makes it ideal for homelab use.</p>
+
+<h3 id="key-specifications">Key Specifications</h3>
+
+<ul>
+  <li><strong>Processor</strong>: Intel Core i5-8400T (6 cores/6 threads, 1.7GHz base, 3.3GHz turbo)</li>
+  <li><strong>Memory</strong>: 16GB DDR4 (upgraded from stock 8GB), expandable to 32GB</li>
+  <li><strong>Storage</strong>: 1TB NVMe SSD for blazing-fast VM and container performance</li>
+  <li><strong>Networking</strong>: Gigabit Ethernet port with Intel chipset (reliable for virtualization)</li>
+  <li><strong>Expansion</strong>: Multiple USB 3.1 ports, DisplayPort, HDMI</li>
+  <li><strong>Form Factor</strong>: 1L mini-PC (approximately 7” × 7” × 1.4”)</li>
+  <li><strong>Power Consumption</strong>: ~10W idle, ~45W under load</li>
+</ul>
+
+<h3 id="why-this-hardware-shines-for-homelab-use">Why This Hardware Shines for Homelab Use</h3>
+
+<h4 id="energy-efficiency">Energy Efficiency</h4>
+
+<p>The ThinkCentre M720q’s energy efficiency deserves special attention. With an average power draw of only 15-20W during typical operation, it consumes roughly 80-90% less power than a traditional 1U server. For perspective, my previous rack server pulled around 180W at idle—translating to approximately €20-25 in monthly electricity costs compared to just €2-3 for the ThinkCentre.</p>
+
+<p>This efficiency stems from several design elements:</p>
+
+<ul>
+  <li><strong>Mobile-derived CPU</strong>: The “T” suffix in i5-8400T indicates a power-optimized variant</li>
+  <li><strong>Modern power management</strong>: Advanced sleep states and dynamic frequency scaling</li>
+  <li><strong>Efficient cooling system</strong>: Properly designed airflow eliminates energy waste</li>
+  <li><strong>SSD storage</strong>: No power-hungry spinning disks</li>
+</ul>
+
+<h4 id="virtualization-capabilities">Virtualization Capabilities</h4>
+
+<p>Despite its compact size, the M720q offers robust virtualization support:</p>
+
+<ul>
+  <li><strong>Intel VT-x and VT-d</strong>: Full hardware virtualization support for efficient VM operation</li>
+  <li><strong>Six physical cores</strong>: Sufficient for running 10-15 lightweight VMs or containers</li>
+  <li><strong>NVMe storage</strong>: Exceptional I/O performance for database workloads and concurrent VM operations</li>
+</ul>
+
+<p>I’ve successfully run the following virtualized environments simultaneously:</p>
+
+<ul>
+  <li>Proxmox VE hypervisor (bare metal installation)</li>
+  <li>Ubuntu Server VM running Docker (8+ containers)</li>
+  <li>Windows 10 VM for testing</li>
+  <li>pfSense VM for network experimentation</li>
+  <li>Kubernetes single-node cluster for container orchestration learning</li>
+</ul>
+
+<h4 id="noise-profile">Noise Profile</h4>
+
+<p>For those setting up a homelab in living spaces, noise consideration is crucial. The M720q operates at approximately 28-30dB under typical loads—roughly equivalent to whispered conversation. This quiet operation stands in stark contrast to the 45-55dB jet-like noise of enterprise rack servers.</p>
+
+<p>The system achieves this quiet performance through:</p>
+
+<ul>
+  <li><strong>Single, variable-speed fan</strong>: Ramps up only when necessary</li>
+  <li><strong>Efficient heat sink design</strong>: Maximizes passive cooling</li>
+  <li><strong>Modern CPU thermal management</strong>: Prevents unnecessary fan activation</li>
+</ul>
+
+<h4 id="expansion-options">Expansion Options</h4>
+
+<p>While compact, the M720q offers surprising expandability:</p>
+
+<ul>
+  <li><strong>RAM upgrades</strong>: Two SODIMM slots supporting up to 32GB (2×16GB)</li>
+  <li><strong>Storage expansion</strong>: M.2 slot plus 2.5” SATA bay</li>
+  <li><strong>USB devices</strong>: Multiple USB 3.1 ports for external storage or other peripherals</li>
+  <li><strong>Network expansion</strong>: Additional USB-to-Ethernet adapters for multi-network setups</li>
+</ul>
+
+<h2 id="storage-strategy-local">Storage Strategy: Local</h2>
+
+<p>My storage approach combines local high-performance storage with networked capacity:</p>
+
+<h3 id="local-storage">Local Storage</h3>
+
+<ul>
+  <li><strong>Primary</strong>: 1TB NVMe SSD in the ThinkCentre</li>
+  <li><strong>Purpose</strong>: Host OS, VMs, and frequently accessed containers</li>
+</ul>
+
+<h2 id="scalability-considerations">Scalability Considerations</h2>
+
+<p>A well-designed homelab should grow with your needs. I’ve planned several expansion paths:</p>
+
+<h3 id="short-term-expansion">Short-term Expansion</h3>
+
+<ul>
+  <li><strong>Memory upgrade</strong>: Increase ThinkCentre RAM to 32GB for additional VMs</li>
+</ul>
+
+<h3 id="medium-term-expansion">Medium-term Expansion</h3>
+
+<ul>
+  <li><strong>Additional compute node</strong>: Second ThinkCentre for clustering capabilities</li>
+</ul>
+
+<h3 id="long-term-vision">Long-term Vision</h3>
+
+<ul>
+  <li><strong>Mini-cluster</strong>: 3-4 compute nodes for true high-availability workloads</li>
+  <li><strong>Dedicated backup appliance</strong>: Separate system for comprehensive 3-2-1 backup strategy</li>
+</ul>
+
+<h2 id="cost-analysis">Cost Analysis</h2>
+
+<p>For transparency, here’s the approximate cost breakdown of my current setup:</p>
+
+<ul>
+  <li>Lenovo ThinkCentre M720q (refurbished): 290€</li>
+</ul>
+
+<p>While this represents a significant initial investment, it’s worth noting that this entire setup consumes less than 60W on average—roughly €8-10 monthly in electricity costs. Compared to equivalent cloud computing resources (which would easily exceed €100/month), the homelab achieves ROI within 12-18 months of operation.</p>
+
+<h2 id="lessons-learned-and-recommendations">Lessons Learned and Recommendations</h2>
+
+<p>After several iterations of my homelab setup, I’ve gathered these key insights:</p>
+
+<ol>
+  <li><strong>Start small, grow intentionally</strong>: Begin with a single versatile system before expanding.</li>
+  <li><strong>Prioritize efficiency</strong>: Low power consumption compounds into significant savings.</li>
+  <li><strong>Buy business-class when possible</strong>: Enterprise and small business equipment offers better reliability and features than consumer gear.</li>
+  <li><strong>Consider the complete ecosystem</strong>: Memory, storage, networking, and power protection are as important as CPU specifications.</li>
+  <li><strong>Plan for failure</strong>: Implement backup strategies from day one.</li>
+</ol>
+
+<h2 id="conclusion-building-your-foundation">Conclusion: Building Your Foundation</h2>
+
+<p>Creating a homelab isn’t merely about accumulating hardware—it’s about building a foundation for learning, experimentation, and personal growth in technology. The ThinkCentre M720q and supporting infrastructure have provided me with an excellent balance of performance, efficiency, and expandability.</p>
+
+<p>Whether you’re exploring virtualization, containerization, networking, or automated infrastructure, starting with the right hardware foundation sets you up for success. By prioritizing efficiency, quiet operation, and thoughtful expansion paths, you can create a homelab that grows with your skills and interests without breaking the bank or disrupting your living environment.</p>
+
+<p>Remember that homelab journeys are highly personal—your specific needs may differ from mine. The key is making intentional choices that align with your learning objectives, space constraints, and budget realities.</p>
+
+<p>In the next article in this series, I’ll dive deeper into my virtualization and containerization strategy, exploring how Proxmox, Docker, and Kubernetes work together to create a flexible and powerful homelab environment.</p>
+
+<p>What hardware powers your homelab? I’d love to hear about your setup in the comments below!</p>
+
+<hr />
+
+<p><em>This blog post is part of my ongoing Homelab Series, where I share detailed insights into my personal lab environment. Stay tuned for upcoming posts on virtualization, networking, security, and DevOps automation.</em></p>
+
+<p>Check also my Post on Medium:</p>
+
+<p>https://medium.com/@devopsenqineer/how-to-build-a-homelab-in-2025-3b551baef38f</p>]]></content><author><name>salad1n</name></author><category term="homelab," /><category term="hardware," /><category term="infrastructure" /><summary type="html"><![CDATA[A comprehensive guide to building a modern homelab]]></summary></entry><entry xml:lang="en"><title type="html">sysprep for automation</title><link href="https://salad1n.dev/2024-03-16/sysprep-for-automation" rel="alternate" type="text/html" title="sysprep for automation" /><published>2024-03-16T00:00:00+00:00</published><updated>2024-03-16T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-16/sysprep-for-automation</id><content type="html" xml:base="https://salad1n.dev/2024-03-16/sysprep-for-automation"><![CDATA[<h1 id="how-to-use-sysprep-for-automation">How to use sysprep for automation?</h1>
+
+<h3 id="what-is-sysprep-actually">What is sysprep actually?</h3>
+
+<p>Sysprep stands for system preparation. It is a tool that is integrated within Windows operating systems. It prepares a Windows client or a Windows server to remove specific information from the Windows operating system, e.g. the existing SID is deleted. By running sysprep, the image can be used to be installed on multiple instances.</p>
+
+<h3 id="which-functions-are-good-about-sysprep">Which functions are good about sysprep?</h3>
+
+<p>The following functions are very helpful:</p>
+
+<ul>
+  <li>
+    <p><strong>Removes specific information</strong>: It removes specific information and especially the SID.</p>
+  </li>
+  <li>
+    <p><strong>Uninstalls drivers</strong>: Uninstalls drivers, but does not remove them</p>
+  </li>
+  <li>
+    <p><strong>Add an answer file (unattend)</strong>: Allows you to add an answer file to the existing operating system.</p>
+  </li>
+</ul>
+
+<h3 id="and-how-can-i-use-sysprep-for-automation-now">And how can I use sysprep for automation now?</h3>
+
+<p>First, I’ll give some context as to why you can and should use sysprep.
+<strong>Following scenario:</strong>
+Based on my Terraform project (https://github.com/devopsenqineer/terraform) which creates virtual machines in a Hyper-V environment, assigns the hostname and IP addresses through scripts, there was the following problem: The domain join was not possible because the machines used <strong>all</strong> had the same SID. As a result, I received an error message that this was not possible due to the multiple SID.</p>
+
+<p><strong><em>Possible solution</em></strong>:</p>
+
+<p>Through research, I came across the integrated tool sysprep. Through a conversation with a colleague at work, the possibility of sysprep was explained to me in more detail, as I was not familiar with it at the time.</p>
+
+<p>I continued to read and familiarize myself with sysprep and needed several test runs to get the desired result. In addition, it was previously difficult to activate WinRM (Windows Remote Management).</p>
+
+<p>I had to use a Powershell script to activate WinRM which can be found under the link (https://gist.github.com/tdigangi5/85b0b3bb5f7b35c7b829828928f22cdd). Since I had to run this script every time on a new machine to activate WinRM, it was worth considering putting it in an answer file.</p>
+
+<p>Through intensive research I found parts for the answer file and will share them with you. This answer file can still be revised and further perfected.</p>
+
+<p>## 
+<strong>Explanation for the answer file:</strong></p>
+
+<p>I will briefly explain how to use the answer file and sysprep:</p>
+
+<ul>
+  <li>
+    <p><strong>1st step</strong>: Change the user and password within the answer file, and adjust the path for the PowerShell script for WinRM.</p>
+  </li>
+  <li>
+    <p><strong>2nd step:</strong> Then save the answer file in the sysprep folder. I have named the answer file deploy.xml.</p>
+
+    <p>The path is as follows: <strong>“C:\Windows\System32\Sysprep”</strong>.</p>
+  </li>
+  <li>
+    <p>Step 3:** The last step is to open a cmd window and enter the following command:</p>
+
+    <pre><code class="language-cmd">  C:\Windows\System32\Sysprep\sysprep.exe /generalize /shutdown /oobe /unattend: "C:\Windows\System32\Sysprep\deploy.xml" 
+</code></pre>
+  </li>
+  <li>
+    <p><strong>4th step:</strong> As the last step and actually one of the <strong>most important</strong> steps: Do <strong>NOT</strong> boot the virtual machine. The virtual machine should now be exported and only started up after successful export and, if necessary, copying of the virtual machine.</p>
+  </li>
+</ul>
+
+<h2 id="code-of-the-answer-file">Code of the answer file</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;unattend</span> <span class="na">xmlns=</span><span class="s">"urn:schemas-microsoft-com:unattend"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;settings</span> <span class="na">pass=</span><span class="s">"oobeSystem"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;component</span> <span class="na">xmlns:wcm=</span><span class="s">"http://schemas.microsoft.com/WMIConfig/2002/State"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">name=</span><span class="s">"Microsoft-Windows-Shell-Setup"</span> <span class="na">processorArchitecture=</span><span class="s">"amd64"</span> <span class="na">publicKeyToken=</span><span class="s">"31bf3856ad364e35"</span> <span class="na">language=</span><span class="s">"neutral"</span> <span class="na">versionScope=</span><span class="s">"nonSxS"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;UserAccounts&gt;</span>
+            <span class="nt">&lt;AdministratorPassword&gt;</span>
+               <span class="nt">&lt;Value&gt;</span>Password12345<span class="nt">&lt;/Value&gt;</span>
+               <span class="nt">&lt;PlainText&gt;</span>true<span class="nt">&lt;/PlainText&gt;</span>
+            <span class="nt">&lt;/AdministratorPassword&gt;</span>
+         <span class="nt">&lt;/UserAccounts&gt;</span>
+         <span class="nt">&lt;AutoLogon&gt;</span>
+            <span class="nt">&lt;Username&gt;</span>Administrator<span class="nt">&lt;/Username&gt;</span>
+            <span class="nt">&lt;Enabled&gt;</span>true<span class="nt">&lt;/Enabled&gt;</span>
+            <span class="nt">&lt;LogonCount&gt;</span>1<span class="nt">&lt;/LogonCount&gt;</span>
+            <span class="nt">&lt;Password&gt;</span>
+               <span class="nt">&lt;Value&gt;</span>Password12345<span class="nt">&lt;/Value&gt;</span>
+               <span class="nt">&lt;PlainText&gt;</span>true<span class="nt">&lt;/PlainText&gt;</span>
+            <span class="nt">&lt;/Password&gt;</span>
+         <span class="nt">&lt;/AutoLogon&gt;</span>
+         <span class="nt">&lt;FirstLogonCommands&gt;</span>
+            <span class="nt">&lt;SynchronousCommand</span> <span class="na">wcm:action=</span><span class="s">"add"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;Order&gt;</span>1<span class="nt">&lt;/Order&gt;</span>
+               <span class="nt">&lt;CommandLine&gt;</span>reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v AutoLogonCount /t REG_DWORD /d 0 /f<span class="nt">&lt;/CommandLine&gt;</span>
+            <span class="nt">&lt;/SynchronousCommand&gt;</span>
+            <span class="nt">&lt;SynchronousCommand</span> <span class="na">wcm:action=</span><span class="s">"add"</span><span class="nt">&gt;</span>
+               <span class="nt">&lt;Order&gt;</span>2<span class="nt">&lt;/Order&gt;</span>
+               <span class="nt">&lt;CommandLine&gt;</span>powershell.exe -File "C:\{PathToYourScriptOnTheHost}\winrm.ps1"<span class="nt">&lt;/CommandLine&gt;</span>
+            <span class="nt">&lt;/SynchronousCommand&gt;</span>
+         <span class="nt">&lt;/FirstLogonCommands&gt;</span>
+         <span class="nt">&lt;OOBE&gt;</span>
+            <span class="nt">&lt;HideEULAPage&gt;</span>true<span class="nt">&lt;/HideEULAPage&gt;</span>
+            <span class="nt">&lt;HideLocalAccountScreen&gt;</span>true<span class="nt">&lt;/HideLocalAccountScreen&gt;</span>
+            <span class="nt">&lt;HideOEMRegistrationScreen&gt;</span>true<span class="nt">&lt;/HideOEMRegistrationScreen&gt;</span>
+            <span class="nt">&lt;HideOnlineAccountScreens&gt;</span>true<span class="nt">&lt;/HideOnlineAccountScreens&gt;</span>
+            <span class="nt">&lt;HideWirelessSetupInOOBE&gt;</span>true<span class="nt">&lt;/HideWirelessSetupInOOBE&gt;</span>
+            <span class="nt">&lt;NetworkLocation&gt;</span>Other<span class="nt">&lt;/NetworkLocation&gt;</span>
+            <span class="nt">&lt;ProtectYourPC&gt;</span>3<span class="nt">&lt;/ProtectYourPC&gt;</span>
+            <span class="nt">&lt;SkipMachineOOBE&gt;</span>true<span class="nt">&lt;/SkipMachineOOBE&gt;</span>
+            <span class="nt">&lt;SkipUserOOBE&gt;</span>true<span class="nt">&lt;/SkipUserOOBE&gt;</span>
+            <span class="nt">&lt;UnattendEnableRetailDemo&gt;</span>false<span class="nt">&lt;/UnattendEnableRetailDemo&gt;</span>
+         <span class="nt">&lt;/OOBE&gt;</span>
+      <span class="nt">&lt;/component&gt;</span>
+   <span class="nt">&lt;/settings&gt;</span>
+<span class="nt">&lt;/unattend&gt;</span>
+</code></pre></div></div>
+
+<p>Thanks for reading my blog.</p>]]></content><author><name>salad1n</name></author><category term="automation" /><summary type="html"><![CDATA[automation using sysprep]]></summary></entry><entry xml:lang="en"><title type="html">introduction into ansible</title><link href="https://salad1n.dev/2024-03-10/ansible-introduction" rel="alternate" type="text/html" title="introduction into ansible" /><published>2024-03-10T00:00:00+00:00</published><updated>2024-03-10T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-10/ansible-introduction</id><content type="html" xml:base="https://salad1n.dev/2024-03-10/ansible-introduction"><![CDATA[<h1 id="ansible---introduction">Ansible - Introduction</h1>
+
+<p>Ansible is an open source tool for the automation of the configuration and management of computer systems. Here are some easy points to understand:</p>
+
+<ul>
+  <li>
+    <p><strong>Automation</strong>: Ansible can automate repetitive tasks, such as the installation of software on a computer.</p>
+  </li>
+  <li>
+    <p><strong>Configuration management</strong>: Ansible can manage and change the settings on a computer.</p>
+  </li>
+  <li>
+    <p><strong>Simplicity</strong>: Ansible uses the simple YAML language.</p>
+  </li>
+  <li>
+    <p><strong>No additional software required</strong>: Ansible has no need for additional software on the computers it manages. 
+Ansible uses existing technologies such as OpenSSH and Python.</p>
+  </li>
+</ul>
+
+<h3 id="ansibles-approach">Ansible’s approach:</h3>
+
+<p>To automate tasks on computers or servers, Ansible works in a series of steps:</p>
+
+<ul>
+  <li>
+    <p><strong>Connect to nodes</strong>: Ansible connects to nodes (called hosts). Nodes are the target endpoints. They can be servers, network devices, or any computer you want to manage with Ansible.</p>
+  </li>
+  <li>
+    <p><strong>Transfer modules</strong>: Ansible pushes small programs, called modules, to these nodes. These modules are used to perform automation tasks in Ansible.</p>
+  </li>
+  <li>
+    <p><strong>Running modules</strong>: Ansible executes the modules and removes them when the execution is complete. These programs are written as resource models for the desired state of the system.</p>
+  </li>
+  <li>
+    <p><strong>Agentless automation</strong>: Ansible is agentless and can therefore manage nodes without the need to install any software on them. Ansible uses the SSH protocol to connect to servers and perform tasks.</p>
+  </li>
+</ul>
+
+<h3 id="yaml">YAML</h3>
+
+<p>YAML (<strong>Yet Another Markup Language</strong>) is the language used for Ansible.</p>
+
+<p>I’m going to show you some basic Ansible Tasks. 
+In the future I will delve deeper into Ansible Tasks, Roles and Playbooks in general. 
+And I will teach you how to write your own Windows based Ansible modules.</p>
+
+<p>This Task installs the IIS.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install IIS (Web-Server only)</span>
+  <span class="na">ansible.windows.win_feature</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Web-Server</span>
+    <span class="na">state</span><span class="pi">:</span> <span class="s">present</span>
+</code></pre></div></div>
+
+<p>Documentation: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_feature_module.html</p>]]></content><author><name>salad1n</name></author><category term="ansible" /><summary type="html"><![CDATA[introduction for ansible]]></summary></entry><entry xml:lang="en"><title type="html">Introduction to my blog</title><link href="https://salad1n.dev/2024-03-05/introduction-to-my-blog" rel="alternate" type="text/html" title="Introduction to my blog" /><published>2024-03-05T00:00:00+00:00</published><updated>2024-03-05T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-05/introduction-to-my-blog</id><content type="html" xml:base="https://salad1n.dev/2024-03-05/introduction-to-my-blog"><![CDATA[<p><img src="https://imgur.com/a/FcEVEnV" alt="" />
+<em><a href="https://imgur.com/a/FcEVEnV"></a> <a href="https://imgur.com/a/FcEVEnV"></a></em></p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>This is my first blogpost.</p>
+
+<p>My name is devopsenqineer. I am currently a junior devops engineer in a company that does digitalisation and archiving of patient data. The team I am part of runs the production software.</p>
+
+<p>The production software processes patient data and is therefore a critical and essential process for the whole company.</p>
+
+<p>As part of my job, I am responsible for the staging environment. I use Terraform, Ansible and Powershell.</p>
+
+<p>I automate within the Azure cloud and occasionally on prem. I also give training on specific subjects. I like to work with the latest technology.</p>
+
+<p>In my blog I will write about automation in general, but also about technologies like Ansible or Terraform.</p>
+
+<p>I will also write about DevOps in general and about the Azure cloud. I will be creating tutorial series from time to time and making them available here.</p>
+
+<p>If there are any other topics that I am interested in, I will of course write about them as well.</p>
+
+<hr />
+
+<h3 id="related-articles">Related Articles</h3>
+<ul>
+  <li><a href="../2024-03-05-my-tech-stack.md">My Tech Stack</a></li>
+  <li><a href="../2024-03-05-roadmap-blog-topics.md">Roadmap Blog Topics</a></li>
+</ul>]]></content><author><name>salad1n</name></author><category term="introduction" /><summary type="html"><![CDATA[introduction to my blog included the topics i will write about]]></summary></entry><entry xml:lang="en"><title type="html">My Tech Stack</title><link href="https://salad1n.dev/2024-03-05/my-tech-stack" rel="alternate" type="text/html" title="My Tech Stack" /><published>2024-03-05T00:00:00+00:00</published><updated>2024-03-05T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-05/my-tech-stack</id><content type="html" xml:base="https://salad1n.dev/2024-03-05/my-tech-stack"><![CDATA[<h1 id="summary-of-my-tech-stack">summary of my tech stack</h1>
+
+<p>I will share with you my tech stack. I am proficient in the following technologies:</p>
+
+<ul>
+  <li>Ansible (advanced)</li>
+  <li>Terraform (beginner)</li>
+  <li>Powershell (beginner)</li>
+  <li>Azure Cloud (beginner)</li>
+</ul>
+
+<p>In the course of my career I will do my best to be advanced in each of the technologies.</p>
+
+<p>I also want to and will learn new technologies.</p>]]></content><author><name>salad1n</name></author><category term="tech" /><summary type="html"><![CDATA[My current tech stack]]></summary></entry><entry xml:lang="en"><title type="html">Roadmap Blog Topics</title><link href="https://salad1n.dev/2024-03-05/roadmap-blog-topics" rel="alternate" type="text/html" title="Roadmap Blog Topics" /><published>2024-03-05T00:00:00+00:00</published><updated>2024-03-05T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-05/roadmap-blog-topics</id><content type="html" xml:base="https://salad1n.dev/2024-03-05/roadmap-blog-topics"><![CDATA[<h1 id="roadmap-for-my-blog">Roadmap for my blog</h1>
+
+<p>I will share with you my Roadmap for this Blog and i will link here the related posts.</p>
+
+<ul>
+  <li>Ansible Tutorials</li>
+  <li>Terraform Tutorials</li>
+  <li>Azure Tutorials</li>
+</ul>]]></content><author><name>salad1n</name></author><category term="roadmap" /><summary type="html"><![CDATA[Roadmap Blog Topics]]></summary></entry></feed>

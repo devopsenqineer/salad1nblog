@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>introduction into ansible | salad1n</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="introduction into ansible" />
+<meta name="author" content="salad1n" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="introduction for ansible" />
+<meta property="og:description" content="introduction for ansible" />
+<link rel="canonical" href="https://salad1n.dev/2024-03-10/ansible-introduction" />
+<meta property="og:url" content="https://salad1n.dev/2024-03-10/ansible-introduction" />
+<meta property="og:site_name" content="salad1n" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="introduction into ansible" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"salad1n","url":"https://salad1n.dev"},"dateModified":"2024-03-10T00:00:00+00:00","datePublished":"2024-03-10T00:00:00+00:00","description":"introduction for ansible","headline":"introduction into ansible","mainEntityOfPage":{"@type":"WebPage","@id":"https://salad1n.dev/2024-03-10/ansible-introduction"},"url":"https://salad1n.dev/2024-03-10/ansible-introduction"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  <link rel="stylesheet" href="/assets/timeline.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="https://salad1n.dev/feed.xml" title="salad1n" />
+
+  <!-- Google Analytics-->
+  
+</head>
+
+
+  <body>
+
+    <nav class="nav">
+  <div class="nav-container">
+    <a href="/" style="color:#111; text-decoration:none;">
+      <h2 class="nav-title">salad1n</h2>
+    </a>
+    <ul>
+      <li><a href="/" style="color:#111;">Posts</a></li>
+      <li><a href="/tags" style="color:#111;">Tags</a></li>
+      <li><a href="/about" style="color:#111;">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <main>
+      <div class="post">
+  <div class="post-info">
+    <span>Written by salad1n</span>
+
+    
+      <br>
+      <span>on&nbsp;</span><time datetime="2024-03-10 00:00:00 +0000">March 10, 2024</time>
+    
+  </div>
+
+  <h1 class="post-title">introduction into ansible</h1>
+  <div class="post-line"></div>
+
+  <h1 id="ansible---introduction">Ansible - Introduction</h1>
+
+<p>Ansible is an open source tool for the automation of the configuration and management of computer systems. Here are some easy points to understand:</p>
+
+<ul>
+  <li>
+    <p><strong>Automation</strong>: Ansible can automate repetitive tasks, such as the installation of software on a computer.</p>
+  </li>
+  <li>
+    <p><strong>Configuration management</strong>: Ansible can manage and change the settings on a computer.</p>
+  </li>
+  <li>
+    <p><strong>Simplicity</strong>: Ansible uses the simple YAML language.</p>
+  </li>
+  <li>
+    <p><strong>No additional software required</strong>: Ansible has no need for additional software on the computers it manages. 
+Ansible uses existing technologies such as OpenSSH and Python.</p>
+  </li>
+</ul>
+
+<h3 id="ansibles-approach">Ansible’s approach:</h3>
+
+<p>To automate tasks on computers or servers, Ansible works in a series of steps:</p>
+
+<ul>
+  <li>
+    <p><strong>Connect to nodes</strong>: Ansible connects to nodes (called hosts). Nodes are the target endpoints. They can be servers, network devices, or any computer you want to manage with Ansible.</p>
+  </li>
+  <li>
+    <p><strong>Transfer modules</strong>: Ansible pushes small programs, called modules, to these nodes. These modules are used to perform automation tasks in Ansible.</p>
+  </li>
+  <li>
+    <p><strong>Running modules</strong>: Ansible executes the modules and removes them when the execution is complete. These programs are written as resource models for the desired state of the system.</p>
+  </li>
+  <li>
+    <p><strong>Agentless automation</strong>: Ansible is agentless and can therefore manage nodes without the need to install any software on them. Ansible uses the SSH protocol to connect to servers and perform tasks.</p>
+  </li>
+</ul>
+
+<h3 id="yaml">YAML</h3>
+
+<p>YAML (<strong>Yet Another Markup Language</strong>) is the language used for Ansible.</p>
+
+<p>I’m going to show you some basic Ansible Tasks. 
+In the future I will delve deeper into Ansible Tasks, Roles and Playbooks in general. 
+And I will teach you how to write your own Windows based Ansible modules.</p>
+
+<p>This Task installs the IIS.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install IIS (Web-Server only)</span>
+  <span class="na">ansible.windows.win_feature</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Web-Server</span>
+    <span class="na">state</span><span class="pi">:</span> <span class="s">present</span>
+</code></pre></div></div>
+
+<p>Documentation: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_feature_module.html</p>
+
+</div>
+
+
+
+<div class="pagination">
+  
+    <a href="/2024-03-16/sysprep-for-automation" class="left arrow">&#8592;</a>
+  
+  
+    <a href="/2024-03-05/roadmap-blog-topics" class="right arrow">&#8594;</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+    </main>
+
+    <footer>
+</footer>
+
+  </body>
+</html>
