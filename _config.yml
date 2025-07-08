@@ -1,17 +1,17 @@
 # Site settings
-title:          Tale
+title:          salad1n
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+baseurl:        ""                # Leer lassen, da du eine eigene Domain nutzt
+url:            "https://salad1n.dev"   # Deine Domain
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         salad1n
+  url:          https://salad1n.dev
+  email:       
 
 # Build settings
 markdown:       kramdown
@@ -25,9 +25,9 @@ sass:
 
 # Gems
 plugins:
-  - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-feed
   # - jemoji #Uncomment this to allow emoji in your post
 
 # Permalinks

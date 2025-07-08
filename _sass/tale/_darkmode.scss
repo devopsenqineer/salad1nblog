@@ -1,0 +1,45 @@
+// Blue/Grey Theme
+$dark-bg: #181c20; // dunkles Grau
+$dark-text: #e8e6e3;
+$dark-link: #4a9ae1; // Hauptfarbe Blau
+$dark-heading: #4a9ae1; // Überschriften auch Blau
+$dark-border: #222;
+$dark-code-bg: #23272e;
+$dark-selection: #282a36;
+$dark-muted: #888;
+
+[data-theme="dark"] {
+  body {
+    background: $dark-bg !important;
+    color: $dark-text !important;
+  }
+  a {
+    color: $dark-link !important;
+  }
+  h1, h2, h3, h4, h5, h6, .site-title, .site-title a, .post-title, .post-title a, .catalogue .catalogue-title, .catalogue .catalogue-title a {
+    color: $dark-heading !important;
+  }
+  .post-content, .post-content *,
+  .catalogue .catalogue-content, .catalogue .catalogue-content *,
+  .catalogue .catalogue-meta, .catalogue .catalogue-meta *,
+  .catalogue .catalogue-date, .catalogue .catalogue-date *,
+  .pinned, .pinned *,
+  .meta, .meta *,
+  .date, .date * {
+    color: $dark-text !important;
+  }
+  hr, pre, code, blockquote, input, textarea, select {
+    border-color: $dark-border !important;
+  }
+  pre, code {
+    background: $dark-code-bg !important;
+    color: $dark-link !important;
+  }
+  ::selection {
+    background: $dark-selection;
+  }
+  .muted, .meta, .date {
+    color: $dark-muted !important;
+  }
+  // Weitere Anpassungen nach Bedarf
+}

@@ -1,0 +1,110 @@
+/* Timeline CSS for About Page (angepasst nach salad1n.dev/about) */
+.timeline {
+	position: relative;
+	width: 650px;
+	margin: 0 auto;
+	padding: 1px;
+	list-style-type: none;
+	height: 100%;
+}
+.timeline:before {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	content: " ";
+	display: block;
+	width: 2px;
+	height: 100%;
+	background: #111;
+	z-index: 5;
+}
+.timeline li {
+	padding: 2em 0;
+}
+.timeline li::after {
+	content: "";
+	display: block;
+	height: 150%;
+	clear: both;
+	visibility: hidden;
+}
+.direction-l, .direction-r {
+	position: relative;
+	width: 287px;
+	float: left;
+	text-align: right;
+}
+.direction-r {
+	width: 293px;
+	float: right;
+	text-align: left;
+}
+.flag-wrapper {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+.flag {
+	position: relative;
+	display: inline;
+	background: none;
+	padding: 6px 10px;
+	font-weight: normal;
+	color: #222;
+	box-shadow: none;
+	font-size: 1.1em;
+}
+.time-wrapper {
+	display: inline;
+	line-height: 1em;
+	font-size: 0.8em;
+	color: #888;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.time {
+	display: inline-block;
+	padding: 4px 6px;
+	background: none;
+}
+.desc {
+	margin: 1em 0.2em 2em 0;
+	font-size: 1em;
+	line-height: 1.5em;
+	background: none;
+	box-shadow: none;
+	color: #222;
+}
+@media (max-width: 860px) {
+	.timeline {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.timeline:before {
+		left: 50%;
+		margin-left: -1px;
+	}
+	.direction-l, .direction-r {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	.flag {
+		background: rgb(255, 255, 255);
+		z-index: 15;
+	}
+	.time-wrapper {
+		float: none;
+		display: block;
+		position: relative;
+		margin: 4px 0 0 0;
+		z-index: 14;
+	}
+	.desc {
+		position: relative;
+		margin: 1em;
+		padding: 1em;
+		background: none;
+		box-shadow: none;
+	}
+}

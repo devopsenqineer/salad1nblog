@@ -1,15 +1,96 @@
 ---
-layout: post
-title: "About"
-author: "Chester"
+layout: default
+title: About Me
+lang: en
 permalink: /about/
 ---
 
-A friend of mine writes short stories. One sunny day, I asked if he wanted a website to showcase his works and he agreed. I decided to use GitHub Pages to host his site. That way he wouldn't have to buy a domain and a server.
+<section class="post">
+  <div class="flex-row-between">
+      <a href="{{ site.url }}{{ site.baseurl }}/">« Home</a>
+  </div>
+</section>
 
-While doing some research up on GitHub Pages, I accidentally chanced upon this _simple, blog-aware, static site generator_ called [Jekyll](https://jekyllrb.com/) which works really well with GitHub Pages. I figured it would do just fine for my friend and I set about searching for a pretty theme. I wanted a theme with a _book-ish_ vibe. Unfortunately, most of the themes were too modern. Eventually, I caved and begun working on my own theme. With the help of [Poole](https://github.com/poole/poole), the Jekyll Butler, I was able to build **Tale**.
+<!-- About me section (Timeline) -->
+<section>
+  <ul class="timeline">
+    <li>
+        <div class="direction-l">
+            <div class="flag-wrapper">
+                <span class="flag">DevOps Engineer</span>
+                <span class="time-wrapper"><span class="time">since January 2025</span></span>
+            </div>
+            <div class="desc">
+                I switched the org.<br>
+                Working currently as a <strong>DevOps Engineer.</strong><br><br>
+                I focus in my work currently on:<br><br>
+                <strong>● Docker</strong><br>
+                <strong>● Kubernetes</strong><br>
+                <strong>● Linux</strong><br>
+                <strong>● AWS</strong><br>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="direction-r">
+            <div class="flag-wrapper">
+                <span class="flag">Junior DevOps Engineer</span>
+                <span class="time-wrapper"><span class="time">January 2024 - December 2024</span></span>
+            </div>
+            <div class="desc">
+                Worked as a <strong>Junior DevOps Engineer</strong> in the same org where I did my apprenticeship.<br><br>
+                My main focus was:<br><br>
+                <strong>● CI/CD YAML-Pipelines in Azure DevOps</strong><br>
+                <strong>● Azure Cloud</strong><br>
+                <strong>● Infrastructure as Code with Terraform</strong><br>
+                <strong>● Configuration management with Ansible</strong><br>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="direction-l">
+            <div class="flag-wrapper">
+                <span class="flag">IT Specialist Apprenticeship</span>
+                <span class="time-wrapper"><span class="time">August 2021 - January 2024</span></span>
+            </div>
+            <div class="desc">
+                Apprenticeship in an IT healthcare company with 1000 employees.<br><br>
+                Worked in different IT departments.<br><br>
+                Specialization in <strong>DevOps</strong> pursued.<br>
+                In my blog I cover many cloud and automation topics.
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="direction-r">
+            <div class="flag-wrapper">
+                <span class="flag">Office Management Apprenticeship</span>
+                <span class="time-wrapper"><span class="time">2016 - 2019</span></span>
+            </div>
+            <div class="desc">
+                Apprenticeship in a worldwide known NGO.
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="direction-l">
+            <div class="flag-wrapper">
+                <span class="flag">sultan</span>
+                <span class="time-wrapper"><span class="time">since 199X</span></span>
+            </div>
+            <div class="desc">
+                born as sultan
+            </div>
+        </div>
+    </li>
+  </ul>
+</section>
 
-## Contribute
-Feel free to create an issue or make a pull request on [GitHub](https://github.com/chesterhow/tale).
+<!-- adding an empty line to separate the social profile links -->
+<br></br>
+<br></br>
+<br></br>
 
-Thanks for reading!
+<section>
+  <nav class="post-nav"></nav>
+</section>
