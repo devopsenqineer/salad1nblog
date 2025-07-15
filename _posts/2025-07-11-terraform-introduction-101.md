@@ -1,6 +1,6 @@
 ---
 layout: post
-title: terraform 101
+title: terraform introduction 101
 description: tutorial on terraform
 summary: terraform
 tags: tutorial
