@@ -1,4 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://salad1n.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://salad1n.dev/" rel="alternate" type="text/html" /><updated>2025-07-15T17:43:27+00:00</updated><id>https://salad1n.dev/feed.xml</id><title type="html">salad1n</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>salad1n</name></author><entry xml:lang="en"><title type="html">terraform modules 101</title><link href="https://salad1n.dev/2025-07-15/terraform-modules-101" rel="alternate" type="text/html" title="terraform modules 101" /><published>2025-07-15T00:00:00+00:00</published><updated>2025-07-15T00:00:00+00:00</updated><id>https://salad1n.dev/2025-07-15/terraform-modules-101</id><content type="html" xml:base="https://salad1n.dev/2025-07-15/terraform-modules-101"><![CDATA[<h3 id="terraform-101---modules">Terraform 101 - Modules</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://salad1n.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://salad1n.dev/" rel="alternate" type="text/html" /><updated>2025-12-28T13:31:46+00:00</updated><id>https://salad1n.dev/feed.xml</id><title type="html">salad1n</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>salad1n</name></author><entry xml:lang="en"><title type="html">what did i learn</title><link href="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025" rel="alternate" type="text/html" title="what did i learn" /><published>2025-12-28T00:00:00+00:00</published><updated>2025-12-28T00:00:00+00:00</updated><id>https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025</id><content type="html" xml:base="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025"><![CDATA[<h1 id="what-did-i-learn-as-a-devops-engineer-in-1-year">what did i learn as a devops engineer in 1 year</h1>
+
+<h3 id="new-company">New Company</h3>
+
+<p>I started my devops career switch from a heavily windows-based company to a linux and mac-os based company. I already worked with Terraform in my previous role as a junior devops engineer. ansible, powershell too.</p>
+
+<p>I won’t give any informations on the company, but we’re a SaaS company.</p>
+
+<h3 id="new-technologies--new-responsiblities">New Technologies &amp; New Responsiblities</h3>
+
+<p>I started the first time with working with:</p>
+
+<ul>
+  <li>macOS,</li>
+  <li>Kubernetes,</li>
+  <li>Docker,</li>
+  <li>Linux (RHEL, Rocky Linux),</li>
+  <li>Advanced Networking,</li>
+  <li>GitLab,</li>
+  <li>Bamboo &amp; Bitbucket (onPrem)</li>
+  <li>Atlassian-Suite Administration,</li>
+  <li>Infrastructure as Code (Terraform) for OpenTelekomCloud and AWS.</li>
+  <li>Python,</li>
+  <li>Cloudflare,</li>
+  <li>GitOps (ArgoCD, Flux)</li>
+</ul>
+
+<p>I didn’t work before with macOS so it was very new to me, but I liked it at the first time. After that i’ll learned a many about kubernnetes. i also will post a dedicated blog on kubernetes only. also new was docker and linux for me. I already learned many concepts about networking and peering between two cloud sites.</p>
+
+<p>In the first 6 months i got the task, that our jira/confluence on prem instance gets migrated into the cloud.</p>
+
+<p>I already worked before i switched the company with those tools and i also did some prepration for our migration which i also worked on in my previous compan during apprentinceship.</p>
+
+<p>So i did it and we’re working in the atlassian cloud suite. i also made the permission sheme for our org.</p>
+
+<p>A other task which i worked on was designing with terraform a new k8s cluster in the opentelekomcloud.</p>
+
+<p>it contains:</p>
+<ul>
+  <li>argocd</li>
+  <li>vault</li>
+  <li>…</li>
+</ul>
+
+<p>Also i got new responsibilties:</p>
+<ul>
+  <li>managing cloud infrastructure</li>
+  <li>IaC</li>
+  <li>Networking Administration</li>
+  <li>Atlassian Suite Administrationn</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I learned a much in this period and next year i will focus more on the programming aspect of my job. I liked it much and i will continue my path.</p>]]></content><author><name>salad1n</name></author><category term="tech" /><summary type="html"><![CDATA[what technologies i learned]]></summary></entry><entry xml:lang="en"><title type="html">terraform modules 101</title><link href="https://salad1n.dev/2025-07-15/terraform-modules-101" rel="alternate" type="text/html" title="terraform modules 101" /><published>2025-07-15T00:00:00+00:00</published><updated>2025-07-15T00:00:00+00:00</updated><id>https://salad1n.dev/2025-07-15/terraform-modules-101</id><content type="html" xml:base="https://salad1n.dev/2025-07-15/terraform-modules-101"><![CDATA[<h3 id="terraform-101---modules">Terraform 101 - Modules</h3>
 
 <h4 id="terraform-modules">Terraform Modules</h4>
 
