@@ -1,0 +1,130 @@
+---
+layout: post
+title: Homelabbing is not just Homelabbing.
+description: Homelab is not just Homelabbing. 
+summary: homelab-talk
+tags: homelab
+minute: 5
+lang: en
+---
+
+# What do I mean by that?
+
+Most of us are IT people at heart. You probably deal with the exact same stuff at work every day and see where the industry is heading. It feels like IT today expects you to have a GitHub repo packed with projects, senior-level skills for a junior's salary, and of course "more AI" needs to be crammed in everywhere.
+##### So why the hell would you voluntarily spend your free time dealing with even more of it?
+
+Simple: genuine interest. Real growth. The green field. Just testing things, being patient when stuff breaks, and diving into tech in your spare time to actually get better – completely stress-free. You can shut it off whenever you feel like it and pick up right where you left off.
+
+Rome wasn't built in a day either. ;)
+
+# Big Picture
+
+This isn't about criticizing the industry – I just want to show you my current homelab: The Open Transparency Lab Vision 2026.
+
+If you look at the architecture diagram, on the right you'll find the legend with the explanations, hardware specs and the technologies I used. On the left you'll see the different layers.
+
+The layers help to abstract and represent everything more clearly.
+
+![[Pasted image 20260505152124.png]]
+
+I'll walk through each layer step by step and explain how they work.
+
+Also, since I'm transparent about how I work, I'll link the GitHub repo so you can deploy it yourself.
+
+GitHub Repo Link: https://github.com/euroopencost/euroopencost-lab
+
+---
+# Hardware
+
+That's my host for this project.
+
+![[Pasted image 20260505152310.png]]
+
+Workloads run smooth, everything feels snappy. The more workloads you throw at it, the more you should think about getting a better mini PC.
+
+Definitely a lot of fun and if anyone wants to grab the same one: 
+https://www.refurbed.de/p/lenovo-thinkcentre-m720q-tiny/
+
+
+---
+# Quick Real Talk
+
+I've worked with these technologies professionally for a while and wanted a production-ready, disposable cluster deployment.
+
+To test new applications on a clean slate.
+
+I'm a DevOps engineer with experience across various cloud providers, on-prem setups and a solid amount of Terraform work under my belt.
+
+GitOps wasn't new to me either, so the only real shift was moving from enterprise K8s at work to K3s at home – same thing, just smaller.
+
+So I've got a production-ready deployment with its own SDNs, its own firewall rules, its own VLANs, internet access only for downloads, but completely unreachable from outside. 
+
+Also planning to add another external base service for better monitoring and an extra security layer. Might introduce a dedicated firewall base service. Policies with Kyverno are also on the list.
+
+# Technology
+
+Alright, I've kept it suspenseful long enough – here are the technologies.
+
+![[Pasted image 20260505152322.png]]
+
+---
+# Zone 1: Edge & DNS Layer
+
+This is how the setup talks to the internet. The blue dotted line shows the public traffic. I have absolutely no interest in hanging my network unprotected on the open internet, so everything runs through Cloudflare (TLS/DNS). Cloudflare filters out the garbage and passes the clean traffic through to me.
+
+
+![[Pasted image 20260505152338.png]]
+
+Inside the cluster, MetalLB picks up the packet (because we're on-prem and don't have ready-made cloud load balancers) and hands it off to Traefik. Traefik is my ingress controller. Every new app I deploy (e.g. app.domain.dev) automatically gets a fresh certificate from Traefik via the Cloudflare DNS challenge.
+
+One small detail: so I don't have to take an unnecessary detour through the internet when I'm on my home Wi-Fi, AdGuard Home runs as a base service acting as split-DNS. When I'm home, AdGuard resolves the domain directly to the internal MetalLB IP. Zero-trust vibes at full LAN speed.
+
+---
+# Zone 2: Control & Management (VLAN 20)
+
+This is the brain. My MGMT node runs on Proxmox, backed by a hefty ZFS storage pool. Why the strict separation? Because this is where everything gets provisioned from.
+
+At the SDN level, I've configured the VNets so the machines can pull stuff from the internet (updates, images etc.), but they're completely invisible and unreachable from the outside.
+
+![[Pasted image 20260505152415.png]]
+
+The purple line shows the management access: from my VSCode server on the MGMT node, I push the infrastructure together via Terraform.
+
+
+---
+# Zone 3: K3s Workload Cluster (VLAN 40)
+
+This is the actual playground. A lightweight K3s cluster for my applications. And no manual kubectl messing around here. The whole setup runs on a GitOps approach.
+
+
+![[Pasted image 20260505152437.png]]
+
+I push my code to my local Gitea instance. 
+Then ArgoCD comes into play: it monitors my repo, spots the new manifests and automatically pulls the cluster to the desired state.
+
+A full enterprise CI/CD pipeline, running entirely locally.
+
+---
+## What's Next?
+
+This setup is so much fun right now that I've decided to document the whole journey. I'm going to rebuild my old YouTube channel into salad1n (or salad1n-dev).
+
+Before you ask: No, I don't want to be on camera. I'll be working in ghost mode – no face, and I'll mask my voice using local RVC tools via OBS. Pure IT, DevOps and cloud content. The video series will always have a matching blog post here too.
+
+On top of that, I'm using the infrastructure to relaunch my project EuroOpenCost. 
+https://github.com/euroopencost/euroopencost
+
+A tool for us hobby devs to keep cloud costs under control at providers like Hetzner or OTC and soon for selfhosted too.
+
+It's coming with a super clean new frontend, clear dashboards and will be available directly as a Helm chart for your own homelab.
+
+What does your setup look like? Are you on K3s, or are you out here dealing with the stress of full-blown K8s? Which topics do you want as a video series?
+
+---
+
+### Related Articles
+- [My Tech Stack](../2024-03-05-my-tech-stack.md)
+- [Roadmap Blog Topics](../2024-03-05-roadmap-blog-topics.md)
+
+
+
