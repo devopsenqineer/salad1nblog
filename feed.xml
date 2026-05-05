@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://salad1n.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://salad1n.dev/" rel="alternate" type="text/html" /><updated>2026-05-05T13:39:47+00:00</updated><id>https://salad1n.dev/feed.xml</id><title type="html">salad1n</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>salad1n</name></author><entry xml:lang="en"><title type="html">what did i learn</title><link href="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025" rel="alternate" type="text/html" title="what did i learn" /><published>2025-12-28T00:00:00+00:00</published><updated>2025-12-28T00:00:00+00:00</updated><id>https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025</id><content type="html" xml:base="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025"><![CDATA[<h1 id="what-did-i-learn-as-a-devops-engineer-in-1-year">what did i learn as a devops engineer in 1 year</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://salad1n.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://salad1n.dev/" rel="alternate" type="text/html" /><updated>2026-05-05T13:40:08+00:00</updated><id>https://salad1n.dev/feed.xml</id><title type="html">salad1n</title><subtitle>Minimal Jekyll theme for storytellers</subtitle><author><name>salad1n</name></author><entry xml:lang="en"><title type="html">Homelabbing is not just Homelabbing.</title><link href="https://salad1n.dev/2026-05-05/homelab" rel="alternate" type="text/html" title="Homelabbing is not just Homelabbing." /><published>2026-05-05T00:00:00+00:00</published><updated>2026-05-05T00:00:00+00:00</updated><id>https://salad1n.dev/2026-05-05/homelab</id><content type="html" xml:base="https://salad1n.dev/2026-05-05/homelab"><![CDATA[<h1 id="what-do-i-mean-by-that">What do I mean by that?</h1>
+
+<p>Most of us are IT people at heart. You probably deal with the exact same stuff at work every day and see where the industry is heading. It feels like IT today expects you to have a GitHub repo packed with projects, senior-level skills for a junior’s salary, and of course “more AI” needs to be crammed in everywhere.</p>
+<h5 id="so-why-the-hell-would-you-voluntarily-spend-your-free-time-dealing-with-even-more-of-it">So why the hell would you voluntarily spend your free time dealing with even more of it?</h5>
+
+<p>Simple: genuine interest. Real growth. The green field. Just testing things, being patient when stuff breaks, and diving into tech in your spare time to actually get better – completely stress-free. You can shut it off whenever you feel like it and pick up right where you left off.</p>
+
+<p>Rome wasn’t built in a day either. ;)</p>
+
+<h1 id="big-picture">Big Picture</h1>
+
+<p>This isn’t about criticizing the industry – I just want to show you my current homelab: The Open Transparency Lab Vision 2026.</p>
+
+<p>If you look at the architecture diagram, on the right you’ll find the legend with the explanations, hardware specs and the technologies I used. On the left you’ll see the different layers.</p>
+
+<p>The layers help to abstract and represent everything more clearly.</p>
+
+<p>![[Pasted image 20260505152124.png]]</p>
+
+<p>I’ll walk through each layer step by step and explain how they work.</p>
+
+<p>Also, since I’m transparent about how I work, I’ll link the GitHub repo so you can deploy it yourself.</p>
+
+<p>GitHub Repo Link: https://github.com/euroopencost/euroopencost-lab</p>
+
+<hr />
+<h1 id="hardware">Hardware</h1>
+
+<p>That’s my host for this project.</p>
+
+<p>![[Pasted image 20260505152310.png]]</p>
+
+<p>Workloads run smooth, everything feels snappy. The more workloads you throw at it, the more you should think about getting a better mini PC.</p>
+
+<p>Definitely a lot of fun and if anyone wants to grab the same one: 
+https://www.refurbed.de/p/lenovo-thinkcentre-m720q-tiny/</p>
+
+<hr />
+<h1 id="quick-real-talk">Quick Real Talk</h1>
+
+<p>I’ve worked with these technologies professionally for a while and wanted a production-ready, disposable cluster deployment.</p>
+
+<p>To test new applications on a clean slate.</p>
+
+<p>I’m a DevOps engineer with experience across various cloud providers, on-prem setups and a solid amount of Terraform work under my belt.</p>
+
+<p>GitOps wasn’t new to me either, so the only real shift was moving from enterprise K8s at work to K3s at home – same thing, just smaller.</p>
+
+<p>So I’ve got a production-ready deployment with its own SDNs, its own firewall rules, its own VLANs, internet access only for downloads, but completely unreachable from outside.</p>
+
+<p>Also planning to add another external base service for better monitoring and an extra security layer. Might introduce a dedicated firewall base service. Policies with Kyverno are also on the list.</p>
+
+<h1 id="technology">Technology</h1>
+
+<p>Alright, I’ve kept it suspenseful long enough – here are the technologies.</p>
+
+<p>![[Pasted image 20260505152322.png]]</p>
+
+<hr />
+<h1 id="zone-1-edge--dns-layer">Zone 1: Edge &amp; DNS Layer</h1>
+
+<p>This is how the setup talks to the internet. The blue dotted line shows the public traffic. I have absolutely no interest in hanging my network unprotected on the open internet, so everything runs through Cloudflare (TLS/DNS). Cloudflare filters out the garbage and passes the clean traffic through to me.</p>
+
+<p>![[Pasted image 20260505152338.png]]</p>
+
+<p>Inside the cluster, MetalLB picks up the packet (because we’re on-prem and don’t have ready-made cloud load balancers) and hands it off to Traefik. Traefik is my ingress controller. Every new app I deploy (e.g. app.domain.dev) automatically gets a fresh certificate from Traefik via the Cloudflare DNS challenge.</p>
+
+<p>One small detail: so I don’t have to take an unnecessary detour through the internet when I’m on my home Wi-Fi, AdGuard Home runs as a base service acting as split-DNS. When I’m home, AdGuard resolves the domain directly to the internal MetalLB IP. Zero-trust vibes at full LAN speed.</p>
+
+<hr />
+<h1 id="zone-2-control--management-vlan-20">Zone 2: Control &amp; Management (VLAN 20)</h1>
+
+<p>This is the brain. My MGMT node runs on Proxmox, backed by a hefty ZFS storage pool. Why the strict separation? Because this is where everything gets provisioned from.</p>
+
+<p>At the SDN level, I’ve configured the VNets so the machines can pull stuff from the internet (updates, images etc.), but they’re completely invisible and unreachable from the outside.</p>
+
+<p>![[Pasted image 20260505152415.png]]</p>
+
+<p>The purple line shows the management access: from my VSCode server on the MGMT node, I push the infrastructure together via Terraform.</p>
+
+<hr />
+<h1 id="zone-3-k3s-workload-cluster-vlan-40">Zone 3: K3s Workload Cluster (VLAN 40)</h1>
+
+<p>This is the actual playground. A lightweight K3s cluster for my applications. And no manual kubectl messing around here. The whole setup runs on a GitOps approach.</p>
+
+<p>![[Pasted image 20260505152437.png]]</p>
+
+<p>I push my code to my local Gitea instance. 
+Then ArgoCD comes into play: it monitors my repo, spots the new manifests and automatically pulls the cluster to the desired state.</p>
+
+<p>A full enterprise CI/CD pipeline, running entirely locally.</p>
+
+<hr />
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>This setup is so much fun right now that I’ve decided to document the whole journey. I’m going to rebuild my old YouTube channel into salad1n (or salad1n-dev).</p>
+
+<p>Before you ask: No, I don’t want to be on camera. I’ll be working in ghost mode – no face, and I’ll mask my voice using local RVC tools via OBS. Pure IT, DevOps and cloud content. The video series will always have a matching blog post here too.</p>
+
+<p>On top of that, I’m using the infrastructure to relaunch my project EuroOpenCost. 
+https://github.com/euroopencost/euroopencost</p>
+
+<p>A tool for us hobby devs to keep cloud costs under control at providers like Hetzner or OTC and soon for selfhosted too.</p>
+
+<p>It’s coming with a super clean new frontend, clear dashboards and will be available directly as a Helm chart for your own homelab.</p>
+
+<p>What does your setup look like? Are you on K3s, or are you out here dealing with the stress of full-blown K8s? Which topics do you want as a video series?</p>
+
+<hr />
+
+<h3 id="related-articles">Related Articles</h3>
+<ul>
+  <li><a href="../2024-03-05-my-tech-stack.md">My Tech Stack</a></li>
+  <li><a href="../2024-03-05-roadmap-blog-topics.md">Roadmap Blog Topics</a></li>
+</ul>]]></content><author><name>salad1n</name></author><category term="homelab" /><summary type="html"><![CDATA[Homelab is not just Homelabbing.]]></summary></entry><entry xml:lang="en"><title type="html">what did i learn</title><link href="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025" rel="alternate" type="text/html" title="what did i learn" /><published>2025-12-28T00:00:00+00:00</published><updated>2025-12-28T00:00:00+00:00</updated><id>https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025</id><content type="html" xml:base="https://salad1n.dev/2025-12-28/what-did-i-learn-in-2025"><![CDATA[<h1 id="what-did-i-learn-as-a-devops-engineer-in-1-year">what did i learn as a devops engineer in 1 year</h1>
 
 <h3 id="new-company">New Company</h3>
 
@@ -1235,12 +1349,4 @@ And I will teach you how to write your own Windows based Ansible modules.</p>
 
 <p>In the course of my career I will do my best to be advanced in each of the technologies.</p>
 
-<p>I also want to and will learn new technologies.</p>]]></content><author><name>salad1n</name></author><category term="tech" /><summary type="html"><![CDATA[My current tech stack]]></summary></entry><entry xml:lang="en"><title type="html">Roadmap Blog Topics</title><link href="https://salad1n.dev/2024-03-05/roadmap-blog-topics" rel="alternate" type="text/html" title="Roadmap Blog Topics" /><published>2024-03-05T00:00:00+00:00</published><updated>2024-03-05T00:00:00+00:00</updated><id>https://salad1n.dev/2024-03-05/roadmap-blog-topics</id><content type="html" xml:base="https://salad1n.dev/2024-03-05/roadmap-blog-topics"><![CDATA[<h1 id="roadmap-for-my-blog">Roadmap for my blog</h1>
-
-<p>I will share with you my Roadmap for this Blog and i will link here the related posts.</p>
-
-<ul>
-  <li>Ansible Tutorials</li>
-  <li>Terraform Tutorials</li>
-  <li>Azure Tutorials</li>
-</ul>]]></content><author><name>salad1n</name></author><category term="roadmap" /><summary type="html"><![CDATA[Roadmap Blog Topics]]></summary></entry></feed>
+<p>I also want to and will learn new technologies.</p>]]></content><author><name>salad1n</name></author><category term="tech" /><summary type="html"><![CDATA[My current tech stack]]></summary></entry></feed>
