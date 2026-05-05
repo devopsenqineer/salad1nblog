@@ -90,7 +90,7 @@
 
 <p>The layers help to abstract and represent everything more clearly.</p>
 
-<p>![[Pasted image 20260505152124.png]]</p>
+<p><img src="/assets/images/infrastructure.png" alt="Infrastructure" /></p>
 
 <p>I’ll walk through each layer step by step and explain how they work.</p>
 
@@ -103,7 +103,7 @@
 
 <p>That’s my host for this project.</p>
 
-<p>![[Pasted image 20260505152310.png]]</p>
+<p><img src="/assets/images/hardware.png" alt="Hardware" /></p>
 
 <p>Workloads run smooth, everything feels snappy. The more workloads you throw at it, the more you should think about getting a better mini PC.</p>
 
@@ -129,14 +129,14 @@ https://www.refurbed.de/p/lenovo-thinkcentre-m720q-tiny/</p>
 
 <p>Alright, I’ve kept it suspenseful long enough – here are the technologies.</p>
 
-<p>![[Pasted image 20260505152322.png]]</p>
+<p><img src="/assets/images/technolgy.png" alt="Technology" /></p>
 
 <hr />
 <h1 id="zone-1-edge--dns-layer">Zone 1: Edge &amp; DNS Layer</h1>
 
 <p>This is how the setup talks to the internet. The blue dotted line shows the public traffic. I have absolutely no interest in hanging my network unprotected on the open internet, so everything runs through Cloudflare (TLS/DNS). Cloudflare filters out the garbage and passes the clean traffic through to me.</p>
 
-<p>![[Pasted image 20260505152338.png]]</p>
+<p><img src="/assets/images/edgednslayer.png" alt="Edge and DNS Layer" /></p>
 
 <p>Inside the cluster, MetalLB picks up the packet (because we’re on-prem and don’t have ready-made cloud load balancers) and hands it off to Traefik. Traefik is my ingress controller. Every new app I deploy (e.g. app.domain.dev) automatically gets a fresh certificate from Traefik via the Cloudflare DNS challenge.</p>
 
@@ -149,7 +149,7 @@ https://www.refurbed.de/p/lenovo-thinkcentre-m720q-tiny/</p>
 
 <p>At the SDN level, I’ve configured the VNets so the machines can pull stuff from the internet (updates, images etc.), but they’re completely invisible and unreachable from the outside.</p>
 
-<p>![[Pasted image 20260505152415.png]]</p>
+<p><img src="/assets/images/controlmanagementlayer.png" alt="Control and Management Layer" /></p>
 
 <p>The purple line shows the management access: from my VSCode server on the MGMT node, I push the infrastructure together via Terraform.</p>
 
@@ -158,7 +158,7 @@ https://www.refurbed.de/p/lenovo-thinkcentre-m720q-tiny/</p>
 
 <p>This is the actual playground. A lightweight K3s cluster for my applications. And no manual kubectl messing around here. The whole setup runs on a GitOps approach.</p>
 
-<p>![[Pasted image 20260505152437.png]]</p>
+<p><img src="/assets/images/workloadcluster.png" alt="Workload Cluster" /></p>
 
 <p>I push my code to my local Gitea instance. 
 Then ArgoCD comes into play: it monitors my repo, spots the new manifests and automatically pulls the cluster to the desired state.</p>
